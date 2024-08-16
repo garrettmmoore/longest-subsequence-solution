@@ -2,7 +2,7 @@ from typing import List
 
 
 class Solution:
-    def find_longest_increasing_subsequence_3(self, seq: List[int]) -> List[int]:
+    def find_longest_increasing_subsequence(self, seq: List[int]) -> List[int]:
         """
         Given a sequence of integers, find the longest increasing subsequence.
 
@@ -27,21 +27,9 @@ class Solution:
         # lengths list and previous indices list.
         for i in range(seq_size):
             for j in range(i):
-                print("\n------Beginning------")
-                print("i:", i)
-                print("j:", j)
-                print("seq[i]:", seq[i])
-                print("seq[j]:", seq[j])
-                print("longest_lengths[j]+1: ", longest_lengths[j] + 1)
-                print("longest_lengths[i]: ", longest_lengths[i])
                 if seq[i] > seq[j] and longest_lengths[j] + 1 > longest_lengths[i]:
                     longest_lengths[i] = longest_lengths[j] + 1
-                    print("------------")
-                    print("modified longest_lengths[i]: ", longest_lengths[i])
-                    print("------------")
                     prev_indices[i] = j
-                print("current longest length", longest_lengths[i])
-                print("current longest lengths:", longest_lengths)
 
         # Get the index of the longest increasing subsequence
         longest_index = longest_lengths.index(max(longest_lengths))
@@ -61,17 +49,3 @@ class Solution:
 
 
 solution = Solution()
-
-
-def run_tests(input_seq: List[int], expected_seq: List[int], test_number: int):
-    print(
-        f"TEST {test_number}:",
-        f"\nInput:{input_seq} ",
-        f"\nResult:{solution.find_longest_increasing_subsequence_3(input_seq)}",
-        f"\nExpected: {expected_seq}",
-        "\n------------",
-    )
-
-
-run_tests([6, 1, 5, 2, 3], [1, 2, 3], 1)
-run_tests([5, 4, 3, 2, 1], [5], 2)
