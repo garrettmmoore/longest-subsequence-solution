@@ -2,7 +2,9 @@
 
 Given a sequence of integers, find the longest increasing subsequence.
 
-[Navigate to Solution Source Code](./src/LongestSubsequence.py)
+[Click to: Navigate to Source Code](./src/LongestSubsequence.py)
+
+[Click to: Run Solution in Browser](https://replit.com/@gmoorecode/Python#main.py)
 
 # Table of Contents
 
@@ -44,13 +46,14 @@ the subsequence are in increasing order.
 
 This can be broken down into the following sub-problems:
 
-1. For every index in the sequence up to the current index, find and store the longest increasing 
+- For every index in the sequence up to the current index, find and store the longest increasing 
 subsequence in that subsequence. At the same time, store the previous index that corresponds to the
 current longest subsequence.
 
 ![Alternate text for image](./assets/longest-increasing-subsequence-sketch.jpg)
-2. Identify the longest increasing length out of all the subsequences.
-3. Build the longest increasing subsequence by iterating over the previous indices.
+
+- Identify the longest increasing length out of all the subsequences.
+- Build the longest increasing subsequence by iterating over the previous indices.
 
 ## Coding Logic
     
